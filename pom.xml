@@ -87,16 +87,16 @@
 			<version>${org.kie.lienzo.version}</version>
 		</dependency>
 		<!-- GWT -->
-		<dependency>
+<!--		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-user</artifactId>
 			<version>${com.google.gwt.version}</version>
-		</dependency>
+		</dependency>-->
 		<!-- JsInterop & Elemental2 -->
 		<dependency>
-			<groupId>com.google.jsinterop</groupId>
+			<groupId>com.vertispan.jsinterop</groupId>
 			<artifactId>base</artifactId>
-			<version>${com.google.jsinterop.base.version}</version>
+			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.elemental2</groupId>
@@ -113,7 +113,26 @@
 			<artifactId>elemental2-promise</artifactId>
 			<version>${com.google.elemental2.version}</version>
 		</dependency>
+
 		<!-- Test -->
+		<dependency>
+			<groupId>com.vertispan.j2cl</groupId>
+			<artifactId>jre</artifactId>
+			<version>0.3-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.vertispan.j2cl</groupId>
+			<artifactId>junit-processor</artifactId>
+			<version>0.3-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.vertispan.j2cl</groupId>
+			<artifactId>gwttestcase-emul</artifactId>
+			<version>0.3-SNAPSHOT</version>
+			<scope>source</scope>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -176,9 +195,48 @@
 					</filesets>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>com.vertispan.j2cl</groupId>
+				<artifactId>j2cl-maven-plugin</artifactId>
+				<version>0.10-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<id>build-js</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<defaultWebappDirectory>${project.build.directory}/gwt/launcherDir</defaultWebappDirectory>
+					<compilationLevel>BUNDLE</compilationLevel>
+					<!--
+                    <compilationLevel>ADVANCED</compilationLevel>
+          -->
+					<entrypoint>org.kie.lienzo.client.LienzoExamples</entrypoint>
+					<excludes></excludes>
+					<externs>
+					</externs>
+					<defines>
+					</defines>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<contextFile>${basedir}/src/main/tomcatconf/context.xml</contextFile>
+				</configuration>
+			</plugin>
+
+
 		</plugins>
 	</build>
 
+<!--
 	<profiles>
 		<profile>
 			<id>GWT2</id>
@@ -208,8 +266,8 @@
 								</goals>
 							</execution>
 						</executions>
-						<!-- Plugin configuration. There are many available options, see
-              gwt-maven-plugin documentation at codehaus.org -->
+						&lt;!&ndash; Plugin configuration. There are many available options, see
+              gwt-maven-plugin documentation at codehaus.org &ndash;&gt;
 						<configuration>
 							<runTarget>LienzoShowcase.html</runTarget>
 							<modules>
@@ -250,5 +308,6 @@
 			</build>
 		</profile>
 	</profiles>
+-->
 
 </project>

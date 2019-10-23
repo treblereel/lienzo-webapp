@@ -27,8 +27,8 @@ import com.ait.lienzo.shared.core.types.IColor;
 import com.ait.lienzo.shared.core.types.LineCap;
 import com.ait.lienzo.shared.core.types.LineJoin;
 import com.ait.lienzo.tools.client.Console;
-import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.core.client.Scheduler.RepeatingCommand;
+import org.gwtproject.core.client.Scheduler;
+import org.gwtproject.core.client.Scheduler.RepeatingCommand;
 
 import static com.ait.lienzo.client.core.animation.AnimationProperty.Properties.ALPHA;
 import static com.ait.lienzo.client.core.animation.AnimationProperty.Properties.DASH_OFFSET;
