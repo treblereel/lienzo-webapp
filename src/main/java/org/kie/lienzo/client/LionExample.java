@@ -1,5 +1,7 @@
 package org.kie.lienzo.client;
 
+import org.gwtproject.dom.style.shared.Display;
+
 import com.ait.lienzo.client.core.shape.BoundingBoxPathClipper;
 import com.ait.lienzo.client.core.shape.Group;
 import com.ait.lienzo.client.core.shape.IPathClipper;
@@ -12,7 +14,6 @@ import com.ait.lienzo.client.core.types.BoundingBox;
 import com.ait.lienzo.client.widget.panel.LienzoPanel;
 import com.ait.lienzo.shared.core.types.ColorName;
 import com.ait.lienzo.shared.core.types.DragMode;
-import com.google.gwt.dom.client.Style.Display;
 import elemental2.dom.CSSProperties;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLButtonElement;

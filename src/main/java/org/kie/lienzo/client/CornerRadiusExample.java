@@ -1,5 +1,7 @@
 package org.kie.lienzo.client;
 
+import org.gwtproject.dom.style.shared.Display;
+
 import com.ait.lienzo.client.core.event.NodeDragEndEvent;
 import com.ait.lienzo.client.core.event.NodeDragEndHandler;
 import com.ait.lienzo.client.core.event.NodeDragStartEvent;
@@ -23,7 +25,6 @@ import com.ait.lienzo.client.core.types.Point2D;
 import com.ait.lienzo.client.core.types.Point2DArray;
 import com.ait.lienzo.client.widget.panel.LienzoPanel;
 import com.ait.lienzo.shared.core.types.ColorName;
-import com.google.gwt.dom.client.Style.Display;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLOptionElement;
 import elemental2.dom.HTMLSelectElement;
